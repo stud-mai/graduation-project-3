@@ -1,0 +1,11 @@
+{
+  "name": "graduation-project-3",
+  "version": "1.0.0",
+  "description": "Chat on WebSocket",
+  "dependencies": {
+    "ws": "^1.1.1"
+  },
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}

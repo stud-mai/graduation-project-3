@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Чат LoftSchool</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700,700italic,400italic,300italic,300,500,500italic&subset=latin,cyrillic-ext">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="header">
+            <div class="avatar">
+                <img src="noavatar.png" alt="">
+            </div>
+            <span>Добро пожаловать!</span>
+        </div>
+        <div id="currentChatMembers"></div>
+    </div>
+    <div class="main">
+        <div class="chat">
+            <ul></ul>
+        </div>
+        <div class="form">
+            <input id="messageField" type="text" name="message" placeholder="Введите сообщение">
+            <button id="sendMessageButton">Отправить</button>
+        </div>
+    </div>
+
+    <!--Форма авторизации-->
+    <div id="auth">
+        <h3>Авторизация</h3>
+        <form name="authorization">
+            <input type="text" name="fullname" placeholder="ФИО">
+            <input type="text" name="nickname" placeholder="Ник">
+            <input type="submit" id="authButton" value="Войти">
+        </form>
+    </div>
+
+    <!--Форма загрузки фотографии-->
+    <div id="photoUploadForm">
+        <h3>Загрузка фото</h3>
+        <form name="photoLoader">
+            <input type="file" accept=".jpg" id="photoUpload">
+            <label for="photoUpload">
+                <div data-role="drop-zone">Перетащите сюда фото</div>
+                <img src="" data-role="drop-zone">
+            </label>
+            <input type="button" id="resetButton" value="Отмена">
+            <input type="submit" id="sendPhotoButton" value="Загрузить">
+        </form>
+    </div>
+    <script src="main.js"></script>
+
+    <!-- Шаблон для сообщений в чате -->
+    <script id="chatMessage" type="text/x-handlebars-template">
+        {{#each list}}
+        <li class="message" data-nickname="{{author.nickname}}">
+            <div class="avatar">
+                {{#if author.photo}}
+                    <img src="{{author.photo}}" alt="">
+                {{else}}
+                    <img src="noavatar.png" alt="">
+                {{/if}}
+            </div>
+            <div>
+                <span class="author">{{author.fullname}}</span>
+                <span class="time">{{time}}</span>
+                <div class="text">{{message}}</div>
+            </div>
+        </li>
+        {{/each}}
+    </script>
+
+    <!-- Шаблон для отображения учатников чата -->
+    <script id="chatMembers" type="text/x-handlebars-template">
+        {{#each list}}
+        <li>
+            <span>{{fullname}}</span>
+        </li>
+        {{/each}}
+    </script>
+</body>
+</html>

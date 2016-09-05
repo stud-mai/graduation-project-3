@@ -1,0 +1,303 @@
+*{
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    margin:0;
+}
+
+.sidebar{
+    background-color: #ff8668;
+    width: 22%;
+    height: 100vh;
+    float: left;
+}
+
+.sidebar .header{
+    height: 80px;
+    width: 100%;
+    /*text-align: center;*/
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.header > span{
+    font-weight: 500;
+    color: #fff;
+    line-height: 50px;
+    margin-left: 15px;
+}
+
+.avatar{
+    position: relative;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    float: left;
+}
+
+.sidebar .avatar:hover{
+    cursor: pointer;
+    box-shadow: 0 0 7px 7px #ff7047;
+}
+
+.avatar > img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#currentChatMembers{
+    padding: 15px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+#currentChatMembers > ul{
+    list-style: none;
+    margin: 0;
+    padding-left: 15px;
+}
+
+#currentChatMembers > ul > li{
+    text-transform: initial;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.main{
+    float: right;
+    width: 77%;
+    height: 100vh;
+    position: relative;
+}
+
+.main .chat{
+    height: calc(100% - 60px);
+    overflow-y: auto;
+    margin-right: 3px;
+}
+
+.chat .message{
+    list-style: none;
+    margin: 10px 0;
+}
+
+.message div:nth-child(2){
+    min-height: 70px;
+    margin-left: 70px;
+}
+
+.message .author{
+    font-weight: 500;
+}
+
+.message .time{
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.message .text{
+    padding: 5px 15px 10px 0;
+}
+
+.main .form{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#messageField{
+    width: 80%;
+    height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px #f0f0f0 solid;
+    padding: 5px 10px;
+    color: #9f9f9f;
+    font-size: 13px;
+}
+
+#messageField:focus{
+    outline: none;
+    border-color: #ff8663;
+    box-shadow: 0 0 3px 0 #ff8663;
+    color: #000;
+}
+
+
+#sendMessageButton,
+#auth form > input:last-child,
+#photoUploadForm form > input{
+    width: 115px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 15px;
+    color: #fff;
+    background-color: #ff8663;
+    border: 0;
+    border-radius: 10px;
+    font-size: 14px;
+    float: right;
+}
+
+#sendMessageButton:hover,
+#auth form > input:last-child:hover,
+#photoUploadForm form > input:hover{
+    cursor: pointer;
+    background-color: #ff7047;
+}
+
+#sendMessageButton:focus,
+#auth form > input:last-child:focus,
+#photoUploadForm form > input:focus{
+    outline: none;
+    color: #fff;
+}
+
+#sendMessageButton:active,
+#auth form > input:last-child:active,
+#photoUploadForm form > input:active{
+    outline: none;
+    border-color: #ff8663;
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.25);
+}
+
+#auth,
+#photoUploadForm{
+    position: absolute;
+    left: calc(50% - 250px);
+    width: 500px;
+    /*height: 250px;*/
+    background: #f1f1f1;
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    display: none;
+}
+
+#auth h3,
+#photoUploadForm h3{
+    margin-bottom: 0;
+}
+
+#auth form,
+#photoUploadForm form{
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: right;
+}
+
+#auth form > input{
+    width: 100%;
+    height: 33px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border: 1px #c4c4c4 solid;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    color: #9f9f9f;
+    font-size: 15px;
+    font-family: "Fira Sans", sans-serif;
+}
+
+#auth form > input:last-child{
+    float: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+#auth form > input:focus{
+    outline: none;
+    border-color: #ff8663;
+    box-shadow: 0 0 5px 0 #ff8663;
+    color: #000;
+}
+
+#photoUploadForm form > input{
+    float: none;
+    padding: 0;
+    margin: 15px 0 0;
+    width: 85px;
+}
+
+#photoUploadForm input:first-child{
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#photoUploadForm label > div,
+#photoUploadForm label > img{
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    margin: 0 auto;
+    border: 2px dashed #acacac;
+    border-radius: 10px;
+    text-align: center;
+    color: #acacac;
+}
+
+#photoUploadForm label > div:hover{
+    background-color: rgba(172,172,172,0.3);
+    cursor: pointer;
+    color: #868686;
+}
+
+#photoUploadForm label > img{
+    display: none;
+    border: none;
+}
+
+#photoUploadForm label > img:hover{
+    cursor: pointer;
+    box-shadow: 0 0 3px 3px #ff7047;
+}
+
+#resetButton,
+#sendMessageButton{
+    width: 115px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 15px;
+    color: #fff;
+    background-color: #ff8663;
+    border: 0;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+/** Стили для скроллбара **/
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.25);
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: #c4c4c4;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: #c4c4c4;
+}
